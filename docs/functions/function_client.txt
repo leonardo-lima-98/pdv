@@ -1,0 +1,47 @@
+# Funcionalidades Essenciais por Perfil de Usuário
+
+## 1. PERFIL VENDEDOR (Operador de Caixa)
+
+### Módulo de Vendas (PDV)
+- Iniciar nova venda com identificação do operador
+- Buscar produtos por código de barras, código interno ou nome
+- Adicionar produtos ao carrinho com quantidade
+- Alterar quantidade de itens já adicionados
+- Remover itens do carrinho
+- Aplicar descontos em itens individuais (com limite de permissão)
+- Aplicar desconto geral na venda (com limite de permissão)
+- Visualizar subtotal e total da venda em tempo real
+- Cancelar venda em andamento
+- Suspender venda para retomar depois
+- Retomar vendas suspensas
+
+### Finalização e Pagamento
+- Selecionar forma de pagamento (dinheiro, débito, crédito, PIX)
+- Registrar pagamento em múltiplas formas
+- Calcular troco automaticamente
+- Informar CPF/CNPJ do cliente na nota
+- Finalizar venda e gerar comprovante
+- Imprimir cupom de venda (térmica ou comum)
+- Enviar comprovante por e-mail ou WhatsApp
+- Reimpressão de últimas vendas
+
+### Consultas Básicas
+- Consultar preço de produtos
+- Verificar disponibilidade em estoque
+- Consultar histórico de vendas do dia
+- Visualizar últimas vendas realizadas por ele
+
+### Controle de Caixa
+- Abrir caixa com valor inicial (sangria de entrada)
+- Registrar sangrias (retiradas)
+- Registrar reforços (entradas)
+- Pré-visualizar fechamento de caixa
+- Fechar caixa com conferência de valores
+
+### Cliente/Crediário
+- Buscar cliente cadastrado
+- Cadastro rápido de cliente
+- Registrar venda em crediário (se habilitado)
+- Consultar limite de crédito do cliente
+
+---

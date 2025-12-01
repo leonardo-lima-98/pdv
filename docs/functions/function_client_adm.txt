@@ -1,0 +1,84 @@
+# Funcionalidades Essenciais por Perfil de Usuário
+
+## 2. PERFIL ADMINISTRADOR DA LOJA (Gerente/Proprietário)
+
+### Gestão de Produtos
+- Cadastrar novos produtos (nome, código, preço, custo, estoque inicial)
+- Editar informações de produtos
+- Desativar/ativar produtos
+- Organizar produtos por categorias
+- Criar e gerenciar categorias
+- Definir preços de venda e margem de lucro
+- Configurar alertas de estoque mínimo
+- Importar produtos em lote via CSV/Excel
+- Exportar catálogo de produtos
+- Cadastrar variações de produtos (tamanhos, cores)
+- Adicionar imagens aos produtos
+
+### Controle de Estoque
+- Registrar entrada de mercadorias (compras)
+- Ajustar estoque manualmente (perdas, avarias)
+- Visualizar movimentações de estoque
+- Relatório de produtos com estoque baixo
+- Relatório de produtos sem movimentação
+- Histórico completo de movimentações por produto
+- Inventário (contagem física e ajustes)
+
+### Gestão de Clientes
+- Cadastro completo de clientes
+- Editar dados de clientes
+- Histórico de compras por cliente
+- Controle de crédito e limite
+- Gestão de contas a receber (crediário)
+- Registrar pagamentos de parcelas
+- Relatório de inadimplência
+- Consultar clientes mais frequentes
+
+### Gestão de Usuários e Permissões
+- Cadastrar vendedores/operadores
+- Editar dados de usuários
+- Definir permissões por usuário (descontos, cancelamentos, acesso a relatórios)
+- Desativar/ativar usuários
+- Resetar senhas
+- Visualizar log de ações dos usuários
+
+### Relatórios Gerenciais
+- Vendas por período (dia, semana, mês)
+- Vendas por vendedor
+- Vendas por forma de pagamento
+- Produtos mais vendidos
+- Produtos menos vendidos
+- Relatório de margem de lucro
+- Fechamento de caixa por período
+- Comparativo de vendas entre períodos
+- Faturamento diário/mensal
+- Comissões de vendedores
+- Exportar relatórios em PDF/Excel
+
+### Gestão Financeira
+- Visualizar contas a receber
+- Visualizar contas a pagar
+- Registrar despesas
+- Fluxo de caixa
+- DRE simplificado
+- Acompanhamento de metas de venda
+
+### Configurações da Loja
+- Dados cadastrais da empresa
+- Configurar informações para nota fiscal
+- Personalizar layout de cupom
+- Configurar formas de pagamento aceitas
+- Definir taxas de cartão
+- Configurar mensagens no cupom
+- Parâmetros de desconto máximo
+- Backup manual dos dados
+
+### Fiscal
+- Emissão de NFC-e (Nota Fiscal do Consumidor Eletrônica)
+- Emissão de NF-e (quando aplicável)
+- Cancelamento de notas
+- Carta de correção
+- Consultar notas emitidas
+- Exportar XMLs das notas
+
+---

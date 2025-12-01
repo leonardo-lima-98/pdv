@@ -1,0 +1,168 @@
+# Funcionalidades Essenciais - MVP de PDV Web
+
+## CORE ABSOLUTO (Sem isso não funciona)
+
+### 1. Autenticação Básica
+- Login/Logout com usuário e senha
+- Apenas 2 perfis: Vendedor e Gerente
+- JWT simples para manter sessão
+- Senha com hash (bcrypt)
+
+### 2. Cadastro de Produtos
+- Nome do produto
+- Código de barras (opcional no MVP)
+- Preço de venda
+- Quantidade em estoque
+- Ativo/Inativo
+
+Operações: Criar, Editar, Listar, Buscar
+
+### 3. Realizar Venda
+- Adicionar produtos ao carrinho
+- Calcular total automaticamente
+- Finalizar venda
+- Baixar estoque automaticamente
+- Registrar método de pagamento (Dinheiro, Cartão, PIX)
+- Data/hora da venda
+- Vendedor responsável
+
+### 4. Controle de Estoque Básico
+- Atualização automática ao vender
+- Entrada manual de produtos (compras)
+- Visualizar estoque atual
+
+### 5. Histórico de Vendas
+- Listar vendas realizadas
+- Filtrar por data
+- Filtrar por vendedor
+- Ver detalhes da venda (produtos, valores, pagamento)
+
+### 6. Relatório Simples (Gerente)
+- Total de vendas do dia
+- Total de vendas por período
+- Produtos mais vendidos
+- Vendas por vendedor
+
+## Estrutura Técnica Mínima
+
+### Banco de Dados (3 tabelas principais)
+
+Usuários:
+- id, nome, email, senha_hash, perfil (vendedor/gerente), ativo
+
+Produtos:
+- id, nome, codigo_barras, preco, estoque, ativo
+
+Vendas:
+- id, data_hora, usuario_id, total, metodo_pagamento, status
+
+Itens_Venda:
+- id, venda_id, produto_id, quantidade, preco_unitario, subtotal
+
+### Endpoints API Essenciais
+
+Autenticação:
+- POST /api/login
+- POST /api/logout
+
+Produtos:
+- GET /api/produtos (listar)
+- POST /api/produtos (criar - apenas gerente)
+- PUT /api/produtos/{id} (editar - apenas gerente)
+- GET /api/produtos/{id}
+
+Vendas:
+- POST /api/vendas (criar nova venda)
+- GET /api/vendas (listar histórico)
+- GET /api/vendas/{id} (detalhes)
+
+Estoque:
+- POST /api/estoque/entrada (adicionar produtos)
+- GET /api/estoque (visualizar)
+
+Relatórios:
+- GET /api/relatorios/vendas-dia
+- GET /api/relatorios/vendas-periodo
+
+### Stack Mínima
+
+Backend:
+- FastAPI
+- SQLAlchemy (ORM)
+- PostgreSQL (para começar)
+- Pydantic (validação)
+- python-jose (JWT)
+- passlib (hash senhas)
+
+Não precisa no MVP:
+- Redis
+- Celery
+- WebSocket
+- Múltiplos ambientes
+- Docker (pode rodar direto)
+- Testes automatizados (fazer depois)
+
+## Regras de Negócio Simplificadas
+
+1. Vendedor pode: vender, ver produtos, ver próprias vendas
+2. Gerente pode: tudo + cadastrar produtos, ver todos relatórios
+3. Venda só finaliza se tem estoque
+4. Estoque não pode ficar negativo
+5. Venda finalizada não pode ser alterada (no MVP)
+
+## O que NÃO entra no MVP
+
+- Cancelamento/estorno de vendas
+- Múltiplas lojas/filiais
+- Controle de caixa (abertura/fechamento)
+- Descontos e promoções
+- Impressão de cupom fiscal
+- Integração fiscal (NFC-e)
+- Código de barras com leitor
+- Múltiplos métodos de pagamento na mesma venda
+- Clientes cadastrados
+- Programa de fidelidade
+- Notificações
+- Upload de imagem de produto
+- Controle de validade/lotes
+- Backup automatizado
+- Logs detalhados
+- Métricas avançadas
+
+## Tempo Estimado de Desenvolvimento
+
+Para um desenvolvedor com conhecimento em FastAPI:
+
+- Setup inicial + Auth: 4-6 horas
+- CRUD Produtos: 3-4 horas
+- Sistema de Vendas: 6-8 horas
+- Controle Estoque: 2-3 horas
+- Relatórios básicos: 3-4 horas
+- Testes manuais e ajustes: 4-6 horas
+
+Total: 22-31 horas (3-4 dias úteis)
+
+## Estrutura de Pastas Simples
+
+```
+pdv-backend/
+├── src/
+│   ├── models/          # SQLAlchemy models
+│   ├── schemas/         # Pydantic schemas
+│   ├── routes/          # Endpoints
+│   ├── services/        # Lógica de negócio
+│   ├── database.py      # Conexão DB
+│   └── main.py          # App FastAPI
+├── .env                 # Variáveis ambiente
+├── requirements.txt
+└── README.md
+```
+
+## Próximas Iterações (Pós-MVP)
+
+Versão 1.1: Cancelamento de vendas, descontos
+Versão 1.2: Controle de caixa
+Versão 1.3: Impressão de comprovante
+Versão 2.0: Integração fiscal
+
+Comece simples, valide com usuários reais, depois evolua!
